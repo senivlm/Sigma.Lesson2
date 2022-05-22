@@ -1,0 +1,16 @@
+C:\Users\Admin\OneDrive\Рабочий стол\Учёба\3 курс\2 семестр\Прикладна криптологія\Lesson2\Lesson2\bin\Debug\Lesson2.exe.config
+C:\Users\Admin\OneDrive\Рабочий стол\Учёба\3 курс\2 семестр\Прикладна криптологія\Lesson2\Lesson2\bin\Debug\Lesson2.exe
+C:\Users\Admin\OneDrive\Рабочий стол\Учёба\3 курс\2 семестр\Прикладна криптологія\Lesson2\Lesson2\bin\Debug\Lesson2.pdb
+C:\Users\Admin\OneDrive\Рабочий стол\Учёба\3 курс\2 семестр\Прикладна криптологія\Lesson2\Lesson2\obj\Debug\Lesson2.csproj.AssemblyReference.cache
+C:\Users\Admin\OneDrive\Рабочий стол\Учёба\3 курс\2 семестр\Прикладна криптологія\Lesson2\Lesson2\obj\Debug\Lesson2.csproj.SuggestedBindingRedirects.cache
+C:\Users\Admin\OneDrive\Рабочий стол\Учёба\3 курс\2 семестр\Прикладна криптологія\Lesson2\Lesson2\obj\Debug\Lesson2.csproj.CoreCompileInputs.cache
+C:\Users\Admin\OneDrive\Рабочий стол\Учёба\3 курс\2 семестр\Прикладна криптологія\Lesson2\Lesson2\obj\Debug\Lesson2.exe
+C:\Users\Admin\OneDrive\Рабочий стол\Учёба\3 курс\2 семестр\Прикладна криптологія\Lesson2\Lesson2\obj\Debug\Lesson2.pdb
+C:\Users\Admin\OneDrive\Рабочий стол\Учёба\Sigma Software\2\Lesson2\Lesson2\bin\Debug\Lesson2.exe.config
+C:\Users\Admin\OneDrive\Рабочий стол\Учёба\Sigma Software\2\Lesson2\Lesson2\bin\Debug\Lesson2.exe
+C:\Users\Admin\OneDrive\Рабочий стол\Учёба\Sigma Software\2\Lesson2\Lesson2\bin\Debug\Lesson2.pdb
+C:\Users\Admin\OneDrive\Рабочий стол\Учёба\Sigma Software\2\Lesson2\Lesson2\obj\Debug\Lesson2.csproj.AssemblyReference.cache
+C:\Users\Admin\OneDrive\Рабочий стол\Учёба\Sigma Software\2\Lesson2\Lesson2\obj\Debug\Lesson2.csproj.SuggestedBindingRedirects.cache
+C:\Users\Admin\OneDrive\Рабочий стол\Учёба\Sigma Software\2\Lesson2\Lesson2\obj\Debug\Lesson2.csproj.CoreCompileInputs.cache
+C:\Users\Admin\OneDrive\Рабочий стол\Учёба\Sigma Software\2\Lesson2\Lesson2\obj\Debug\Lesson2.exe
+C:\Users\Admin\OneDrive\Рабочий стол\Учёба\Sigma Software\2\Lesson2\Lesson2\obj\Debug\Lesson2.pdb
