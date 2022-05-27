@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace Lesson2
 {
@@ -12,13 +13,13 @@ namespace Lesson2
         /// <summary>
         /// Сетер
         /// </summary>
-        public int[] Array { set { array = value;} }
+        public int[] Array { set { array = value; } }
 
         public int this[int index]
         {
-            get 
-            { 
-                if(index >= 0 && index < array.Length)
+            get
+            {
+                if (index >= 0 && index < array.Length)
                 {
                     return array[index];
                 }
@@ -41,6 +42,120 @@ namespace Lesson2
         }
         public Vector() { }
 
+        public void Bubble()
+        {
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                for (int j = 0; j < array.Length - i - 1; j++)
+                {
+                    if (array[j + 1] > array[j])
+                    {
+                        int item = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = item;
+                    }
+                }
+            }
+        }
+
+        public void Counting()
+        {
+            int max = array[0], min = array[0];
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] > max)
+                {
+                    max = array[i];
+                }
+                if (array[i] < min)
+                {
+                    min = array[i];
+                }
+
+
+            }
+
+            int[] temp = new int[max - min + 1];
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                temp[array[i]]++;
+            }
+
+            int k = 0;
+            for (int i = 0; i < temp.Length; i++)
+            {
+                for (int j = 0; j < temp[i]; j++)
+                {
+                    array[k] = i + min;
+                    k++;
+                }
+            }
+        }
+
+        private void Merge(int l, int q, int r)
+        {
+            int i = l;
+            int j = q;
+            int[] temp = new int[r - l];
+            int k = 0;//Runs on temp
+            while (i < q && j < r)
+            {
+                if (this.array[i] < this.array[j])
+                {
+                    temp[k] = this.array[i];
+                    i++;
+                }
+                else
+                {
+                    temp[k] = this.array[j];
+                    j++;
+                }
+                k++;
+            }
+            if (i == q)
+            {
+                for (int m = j; m < r; m++)
+                {
+                    temp[k] = this.array[m];
+                    k++;
+                }
+            }
+            else
+            {
+                while (i < q)
+                {
+                    temp[k] = this.array[i];
+                    i++;
+                    k++;
+                }
+            }
+            for (int n = 0; n < temp.Length; n++)
+            {
+                this.array[n + l] = temp[n];
+            }
+        }
+        public void SplitMergeSort()
+        {
+            SplitMergeSort(0, this.array.Length);
+        }
+        public void SplitMergeSort(int start, int end)
+        {
+            if (end - start <= 1) return;
+            
+            int middle = (end + start) / 2;
+            SplitMergeSort(start, middle);
+            SplitMergeSort(middle, end);
+            Merge(start, middle, end);
+
+        }
+
+        public void ReadFromFile(string fileName)
+        {
+            StreamReader reader = new StreamReader(fileName);
+            string line = reader.ReadLine();
+        }
+
         /// <summary>
         /// Генерація масиву в заданому діапазоні
         /// </summary>
@@ -49,7 +164,7 @@ namespace Lesson2
         public void InitRand(int a, int b)
         {
             Random r = new Random();
-            for(int i = 0; i < array.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
                 array[i] = r.Next(a, b);
             }
@@ -73,7 +188,7 @@ namespace Lesson2
                 right = mid;
                 left = right - 1;
             }
-            for(int i = 1;right < array.Length; i++)
+            for (int i = 1; right < array.Length; i++)
             {
                 if (array[right] != array[left])
                 {
@@ -91,7 +206,7 @@ namespace Lesson2
         public void Reverse()
         {
             int[] copy = new int[array.Length];
-            for(int i = array.Length - 1, ind = 0; i >= 0; i--, ind++)
+            for (int i = array.Length - 1, ind = 0; i >= 0; i--, ind++)
             {
                 copy[ind] = array[i];
             }
@@ -111,16 +226,16 @@ namespace Lesson2
                 while (true)
                 {
                     x = random.Next(1, array.Length + 1);
-                    if (masOfExists[x - 1] == 0) 
+                    if (masOfExists[x - 1] == 0)
                     {
                         masOfExists[x - 1] = x;
                         array[i] = x;
                         break;
-                    } 
+                    }
                 }
-                    
+
             }
-            
+
         }
 
         /// <summary>
@@ -139,9 +254,9 @@ namespace Lesson2
                 try
                 {
                     start = i;
-                    for(int j = start; j < array.Length; j++)
+                    for (int j = start; j < array.Length; j++)
                     {
-                        if(array[j+1] != array[start])
+                        if (array[j + 1] != array[start])
                         {
                             end = j + 1;
                             break;
@@ -153,7 +268,7 @@ namespace Lesson2
                 {
                     end = array.Length;
                 }
-                if(end - start > max)
+                if (end - start > max)
                 {
                     max = end - start;
                     value = array[i];
@@ -161,7 +276,7 @@ namespace Lesson2
             }
             mas = new Vector(max);
             int[] masCopy = new int[max];
-            for(int i = 0; i < max; i++)
+            for (int i = 0; i < max; i++)
             {
                 masCopy[i] = value;
             }
@@ -177,7 +292,7 @@ namespace Lesson2
         {
             Pair[] pairs = new Pair[array.Length];
 
-            for(int i = 0; i < array.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
                 pairs[i] = new Pair(0, 0);
             }
@@ -186,9 +301,9 @@ namespace Lesson2
             for (int i = 0; i < array.Length; i++)
             {
                 bool isElement = false;
-                for(int j = 0; j < countDifference; j++)
+                for (int j = 0; j < countDifference; j++)
                 {
-                    if(array[i] == pairs[j].Number)
+                    if (array[i] == pairs[j].Number)
                     {
                         pairs[j].Freq++;
                         isElement = true;
@@ -204,7 +319,7 @@ namespace Lesson2
             }
 
             Pair[] result = new Pair[countDifference];
-            for(int i = 0;i < countDifference; i++)
+            for (int i = 0; i < countDifference; i++)
             {
                 result[i] = pairs[i];
             }
@@ -219,7 +334,7 @@ namespace Lesson2
         public override string ToString()
         {
             string line = "";
-            for(int i = 0; i < array.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
                 line += array[i] + " ";
             }

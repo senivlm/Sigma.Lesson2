@@ -1,0 +1,1 @@
+There are some classes where was written some code about shop. There are product,  meat and dairy classes
