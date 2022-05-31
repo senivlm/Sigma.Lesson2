@@ -29,7 +29,7 @@ namespace Lesson2
                 }
             }
             set
-            {
+            {// тут теж має бути перевірка по індексу
                 array[index] = value;
             }
 
@@ -151,7 +151,7 @@ namespace Lesson2
         }
 
         public void ReadFromFile(string fileName)
-        {
+        {// Ще не реалізований
             StreamReader reader = new StreamReader(fileName);
             string line = reader.ReadLine();
         }
@@ -178,6 +178,7 @@ namespace Lesson2
         {
             int mid = array.Length / 2;
             int left, right;
+            // Cередній елемент є неважливий. Тому при будь-якому розмірі рухатись треба до array. Length/2
             if (mid % 2 == 1)
             {
                 right = mid + 1;
@@ -188,6 +189,7 @@ namespace Lesson2
                 right = mid;
                 left = right - 1;
             }
+            //тут в циклі проблеми.
             for (int i = 1; right < array.Length; i++)
             {
                 if (array[right] != array[left])
@@ -243,7 +245,7 @@ namespace Lesson2
         /// </summary>
         /// <returns></returns>
         public string GetMaxSequence()
-        {
+        {// навіщо новий екземпляр. Треба працювати над полем класу.
             Vector mas;
             int start = 0;
             int end = 0;
